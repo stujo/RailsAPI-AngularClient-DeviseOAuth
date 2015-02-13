@@ -5,7 +5,8 @@
   Only the necessary gems/code have been added to make Device/OAuth2 work, everything else is untouched.
 <hr>
 #### Setup:
-  - You'll want to replace the name of this project (SkeletonRailsApi) with the name of your project and DB, however this is not necessary to get it working.
+  - You'll want to replace the name of this project (SkeletonRailsApi) with the name of your project and DB.
+  - Renaming is not neccesary to get this going, you'll want to rename if you use this skeleton for a project
     - In /config/application.rb - Rename ```module SkeletonRailsApi``` to your app name
     - In /config/database.yml rename the following, replace skeleton-rails-api with your app name
       - database: skeleton-rails-api_development
