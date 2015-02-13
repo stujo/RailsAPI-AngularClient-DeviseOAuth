@@ -50,8 +50,6 @@
     - ```var yourApp``` on line one, line 3, and line 9 can be changed to whatever you like.
     - ```$auth.authenticate('google')``` Google should be replaced with the OAuth Provider of choice - see https://github.com/lynndylanhurley/ng-token-auth#api
     - Put in the address of your API's server on line 5 ```apiUrl: 'http://localhost:3000'```
-- Pray to the Devise, Ruby & JavaScripts Gods
-- 
 ### Runnig the servers
 From your rails api directory use ```rails s``` <br>
 From your Angular root directory in terminal you can use ```python -m SimpleHTTPServer 8888``` to launch a server
