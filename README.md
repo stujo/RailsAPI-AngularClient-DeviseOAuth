@@ -49,4 +49,15 @@
     - ```angular.module('yourAppName', ['ng-token-auth']);``` yourAppName should match the app name you set in the HTML tag of index.html
     - ```var yourApp``` on line one, line 3, and line 9 can be changed to whatever you like.
     - ```$auth.authenticate('google')``` Google should be replaced with the OAuth Provider of choice - see https://github.com/lynndylanhurley/ng-token-auth#api
+    - Put in the address of your API's server on line 5 ```apiUrl: 'http://localhost:3000'```
 - Pray to the Devise, Ruby & JavaScripts Gods
+- 
+## Runnig the servers
+From your rails api directory use ```rails s``` <br>
+From your Angular root directory in terminal you can use ```python -m SimpleHTTPServer 8888``` to launch a server <br>
+You will have needed to configured your OAuth Provider (google, fb, twitter) to have the right redirect...i.e. to your local host in development <br>
+In your rails API, when you move to development you **MUST** change ```origins '*'
+        resource '*'``` in your /config/application.rb to be the address of your Client otherwise anyone can hit your API <br>
+Any questions for the rails-api devise/oauth go to: https://github.com/lynndylanhurley/devise_token_auth <br>
+Any questions for the Angular devise/oauth go to: https://github.com/lynndylanhurley/ng-token-auth <br>
+**I take absolutely no responsibility for this working well or terribly in your application. You should have a general understanding of what this code is doing.**
