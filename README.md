@@ -1,9 +1,9 @@
 # RailsAPI-AngularClient-DeviseOAuth
 
 ## Rails-API
-### Basic Rails API install with a Postgresql database. Only the neccesary gems/code have been added to make Device/OAuth2 work, everything else is untouched.
+### Basic Rails API install with a Postgresql database. Only the necessary gems/code have been added to make Device/OAuth2 work, everything else is untouched.
 #### Setup:
-  - You'll want to replace the name of this project (SkeletonRailsApi) with the name of your project and DB, however this is not neccesary to get it working.
+  - You'll want to replace the name of this project (SkeletonRailsApi) with the name of your project and DB, however this is not necessary to get it working.
     - In /config/application.rb - Rename ```module SkeletonRailsApi``` to your app name
     - In /config/database.yml rename the following, replace skeleton-rails-api with your app name
       - database: skeleton-rails-api_development
