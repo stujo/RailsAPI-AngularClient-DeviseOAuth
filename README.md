@@ -9,13 +9,19 @@
   - Renaming is not neccesary to get this going, you'll want to rename if you use this skeleton for a project
     - In /config/application.rb - Rename ```module SkeletonRailsApi``` to your app name
     - In /config/database.yml rename the following, replace skeleton-rails-api with your app name
-      - database: skeleton-rails-api_development
-      - database: skeleton-rails-api_test
-      - database: skeleton-rails-api_production
-      - username: skeleton-rails-api
-      - password: <%= ENV['SKELETON-RAILS-API_DATABASE_PASSWORD'] %>
+      - database: ``` skeleton-rails-api_development ```
+      - database: ```skeleton-rails-api_test```
+      - database: ```skeleton-rails-api_production```
+      - username: ```skeleton-rails-api```
+      - password: ```<%= ENV['SKELETON-RAILS-API_DATABASE_PASSWORD'] %>```
     - In /config/initializers/secret_token.rb rename:
-      SkeletonRailsApi::Application.config.secret_token = 'SOME SECRET TOKEN'
+      ```SkeletonRailsApi::Application.config.secret_token = 'SOME SECRET TOKEN'```
+  - Make sure your Gemfile contains the OAuth gem of choice i.e:
+      ```
+      gem 'omniauth-github'
+      gem 'omniauth-facebook'
+      gem 'omniauth-google-oauth2'
+      ```
   - Run the following:
     - Bundle install
     - rails g devise_token_auth:install User auth
@@ -30,3 +36,17 @@
     - See "OmniAuth provider settings” in https://github.com/lynndylanhurley/devise_token_auth
     - Set the ENV variable names for the auth provider you’re using in config/initializers/omniauth.rb
   - Pray to the gods of Devise, Ruby, and JavaScripts
+
+## Angular Client
+  This was also left as bare bones as possible and only includes the necessary code/scripts to work with Device/OAuth/RailsAPI. I have included JQuery, however that is technically not necessary.
+### Setup
+- Renaming
+  - In index HTML
+    - ```<html lang='en' ng-app='yourAppName'>``` yourAppName can be changed to...your apps name
+    - ```<body ng-controller='mainCtrl'></body>``` mainCtrl can be changed but not necessary
+    - ```<button ng-click="authenticate('google')">``` 'google' should be replaced with the OAuth provider of your choice
+  - In /js/controllers.js
+    - ```angular.module('yourAppName', ['ng-token-auth']);``` yourAppName should match the app name you set in the HTML tag of index.html
+    - ```var yourApp``` on line one, line 3, and line 9 can be changed to whatever you like.
+    - ```$auth.authenticate('google')``` Google should be replaced with the OAuth Provider of choice - see https://github.com/lynndylanhurley/ng-token-auth#api
+- Pray to the Devise, Ruby & JavaScripts Gods
