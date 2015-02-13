@@ -14,8 +14,8 @@
       - database: skeleton-rails-api_production
       - username: skeleton-rails-api
       - password: <%= ENV['SKELETON-RAILS-API_DATABASE_PASSWORD'] %>
-    - In /config/initializers/secret_token.rb:
-      SkeletonRailsApi::Application.config.secret_token = '......
+    - In /config/initializers/secret_token.rb rename:
+      SkeletonRailsApi::Application.config.secret_token = '......YOUR SECRET TOKEN,'
   - Run the following:
     - Bundle install
     - rails g devise_token_auth:install User auth
